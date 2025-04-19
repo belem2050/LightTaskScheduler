@@ -1,5 +1,4 @@
-# TaskScheduler ( To be tested with real boards... In progress)
-
+# TaskScheduler
 A lightweight cooperative task scheduler for Arduino. Schedule multiple functions to run periodically without blocking your `loop()`. Simple, safe, and flexible.
 
 ## Features
@@ -42,3 +41,6 @@ void loop()
 {
   scheduler.run();
 }
+```
+## Notes 
+To be tested with real boards
