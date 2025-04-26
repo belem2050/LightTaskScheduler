@@ -1,4 +1,4 @@
-#include "TaskScheduler.h"
+#include "LightTaskScheduler.h"
 
 Task::Task(TaskCallback cb, unsigned long interval, bool paused, int priority)
     : callback(cb), interval(interval), lastRun(0), paused(paused), priority(priority) {}
@@ -46,9 +46,9 @@ int Task::getPriority() const
   return priority;
 }
 
-void Task::reset() 
+void Task::reset(unsigned long current) 
 {
-  lastRun = useMicros ? micros() : millis();
+  lastRun = current;
 }
 
 TaskScheduler::TaskScheduler(bool useMicros) : taskCount(0), useMicros(useMicros) {}

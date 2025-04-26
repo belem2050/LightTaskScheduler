@@ -1,4 +1,4 @@
-# TaskScheduler
+# LightTaskScheduler
 A lightweight cooperative task scheduler for Arduino. Schedule multiple functions to run periodically without blocking your `loop()`. Simple, safe, and flexible.
 
 ## Features
@@ -20,7 +20,7 @@ A lightweight cooperative task scheduler for Arduino. Schedule multiple function
 ### Basic Blink Example
 
 ```cpp
-#include <TaskScheduler.h>
+#include <LightTaskScheduler.h>
 
 TaskScheduler scheduler;
 

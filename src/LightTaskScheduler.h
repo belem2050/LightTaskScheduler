@@ -18,7 +18,7 @@ class Task
     void setInterval(unsigned long ms);
     void setPriority(int p);
     int getPriority() const;
-    void reset();
+    void reset(unsigned long current);
 
   private:
     TaskCallback callback;

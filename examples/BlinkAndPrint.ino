@@ -1,4 +1,4 @@
-#include <TaskScheduler.h>
+#include <LightTaskScheduler.h>
 
 TaskScheduler scheduler;
 
