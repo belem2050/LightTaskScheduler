@@ -8,12 +8,12 @@ typedef void (*TaskCallback)();
 class Task 
 {
   public:
-    Task(TaskCallback cb = nullptr, unsigned long interval = 1000, bool paused = true, int priority = 0);
+    Task(TaskCallback cb = nullptr, unsigned long interval = 1000, bool paused = false, int priority = 0);
     void resume();
     void pause();
     bool isPaused() const;
     
-    bool isReady(unsigned long now, bool useMicros = false);
+    bool isReady(unsigned long now);
     void run(unsigned long now);
     void setInterval(unsigned long ms);
     void setPriority(int p);

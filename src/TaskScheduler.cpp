@@ -1,7 +1,7 @@
 #include "TaskScheduler.h"
 
 Task::Task(TaskCallback cb, unsigned long interval, bool paused, int priority)
-    : callback(cb), interval(interval), lastRun(0), paused(false), priority(priority) {}
+    : callback(cb), interval(interval), lastRun(0), paused(paused), priority(priority) {}
 
 void Task::pause() 
 { 
@@ -17,9 +17,9 @@ bool Task::isPaused() const
     return paused;
 }
 
-bool Task::isReady(unsigned long current, bool useMicros)
+bool Task::isReady(unsigned long current)
 {
-    return paused && (current - lastRun >= interval);
+    return !paused && (current - lastRun >= interval);
 }
 
 void Task::run(unsigned long current)
@@ -48,7 +48,7 @@ int Task::getPriority() const
 
 void Task::reset() 
 {
-  lastRun = (micros());
+  lastRun = useMicros ? micros() : millis();
 }
 
 TaskScheduler::TaskScheduler(bool useMicros) : taskCount(0), useMicros(useMicros) {}
@@ -112,7 +112,7 @@ void TaskScheduler::run()
   unsigned long current = now();
   for (int i = 0; i < taskCount; ++i) 
   {
-    if (tasks[i]->isReady(current, useMicros))
+    if (tasks[i]->isReady(current))
     {
       tasks[i]->run(current);
     }
