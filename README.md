@@ -26,6 +26,7 @@ TaskScheduler scheduler;
 
 void blink1()
 {
+  digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
   Serial.println("blink1");
 }
 
