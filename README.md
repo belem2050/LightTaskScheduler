@@ -24,17 +24,36 @@ A lightweight cooperative task scheduler for Arduino. Schedule multiple function
 
 TaskScheduler scheduler;
 
-void blink()
+void blink1()
 {
-  digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
+  Serial.println("blink1");
 }
 
-Task blinkTask(blink, 1000); // run every 1000 ms
+void blink2()
+{
+  Serial.println("blink2");
+}
+
+void blink3()
+{
+  Serial.println("blink3");
+}
+
+Task blinkTask1(blink1, 15000, false, 3); // run every 1000 ms
+
+Task blinkTask2(blink2, 5000, false, 0); // run every 5000 ms
+
+Task blinkTask3(blink3, 2000, false, 1); // run every 2000 ms
 
 void setup()
 {
+  Serial.begin(9600);
   pinMode(LED_BUILTIN, OUTPUT);
-  scheduler.addTask(&blinkTask);
+  scheduler.addTask(&blinkTask1);
+  scheduler.addTask(&blinkTask2);
+  scheduler.addTask(&blinkTask3);
+
+  blinkTask3.run(millis()); // a way to run just start 
 }
 
 void loop()
@@ -42,5 +61,3 @@ void loop()
   scheduler.run();
 }
 ```
-## Notes 
-To be tested with real boards
