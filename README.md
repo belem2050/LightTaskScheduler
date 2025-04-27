@@ -54,7 +54,7 @@ void setup()
   scheduler.addTask(&blinkTask2);
   scheduler.addTask(&blinkTask3);
 
-  blinkTask3.run(millis()); // a way to run just start 
+  blinkTask3.run(millis()); // a way to run once at start 
 }
 
 void loop()
