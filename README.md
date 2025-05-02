@@ -64,3 +64,9 @@ void loop()
 ```
 
 ### Arduino/ Platform IO registries
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+
+  <img src="docs/platformio.png" alt="platformio" width="200" style="border: 1px solid #ccc; border-radius: 10px; padding: 4px;" />
+  <img src="docs/arduino.png" alt="arduino" width="200" style="border: 1px solid #ccc; border-radius: 10px; padding: 4px;" />
+</div>
