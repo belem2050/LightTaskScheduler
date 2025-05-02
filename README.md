@@ -62,3 +62,5 @@ void loop()
   scheduler.run();
 }
 ```
+
+### Arduino/ Platform IO registries
