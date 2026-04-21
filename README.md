@@ -15,7 +15,7 @@ A lightweight cooperative task scheduler for Arduino. Schedule multiple function
 2. In the Arduino IDE: **Sketch → Include Library → Add .ZIP Library...**
 3. Select the downloaded `.zip`
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Basic Blink Example
 
